@@ -25,18 +25,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "PostHog",
-            dependencies: ["phlibwebp"],
             path: "PostHog",
             resources: [
                 .copy("Resources/PrivacyInfo.xcprivacy"),
-            ]
-        ),
-        .target(
-            name: "phlibwebp",
-            path: "vendor/libwebp",
-            publicHeadersPath: ".",
-            cSettings: [
-                .headerSearchPath("."),
             ]
         ),
         .testTarget(
